@@ -1,15 +1,20 @@
 version: '2'
 services:
   buildbot:
-    image: buildbot/buildbot-master:master
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./simple/:/var/lib/buildbot
     env_file:
       - db.env
     environment:
       - BUILDBOT_CONFIG_DIR=config
-      - BUILDBOT_CONFIG_URL=https://github.com/buildbot/buildbot-docker-example-config/archive/master.tar.gz
+      - BUILDBOT_CONFIG_URL=https://github.com/klaital/buildbot-master/archive/simple/master.tar.gz
       - BUILDBOT_WORKER_PORT=9989
       - BUILDBOT_WEB_URL=http://localhost:8010/
       - BUILDBOT_WEB_PORT=tcp:port=8010
+      - WORKER_PASS=$@6N#kM49QgH
     links:
       - db
     depends_on:
@@ -28,8 +33,8 @@ services:
     environment:
       BUILDMASTER: buildbot
       BUILDMASTER_PORT: 9989
-      WORKERNAME: example-worker
-      WORKERPASS: pass
+      WORKERNAME: wwdicebot-worker
+      WORKERPASS: $@6N#kM49QgH
       WORKER_ENVIRONMENT_BLACKLIST: DOCKER_BUILDBOT* BUILDBOT_ENV_* BUILDBOT_1* WORKER_ENVIRONMENT_BLACKLIST
 
     links:

@@ -1,0 +1,4 @@
+
+branch_to_namespace_mapping:
+  deploy-bots: bots
+

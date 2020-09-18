@@ -4,7 +4,7 @@ import os
 from buildbot_worker.bot import Worker
 from twisted.application import service
 
-basedir = '/home/chris/devel/buildbot-master/wwdiceworker'
+basedir = '/home/chris/devel/buildbot-master/klaital-worker'
 rotateLength = 10000000
 maxRotatedFiles = 10
 
@@ -26,7 +26,7 @@ application.setComponent(ILogObserver, FileLogObserver(logfile).emit)
 
 buildmaster_host = 'klaital'
 port = 9989
-workername = 'wwdice-worker'
+workername = 'klaital-worker'
 passwd = 'pass'
 keepalive = 600
 umask = None

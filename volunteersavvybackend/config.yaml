@@ -1,0 +1,16 @@
+home_kubeconfig: /home/chris/.kube/klaital/kubeconfig
+
+branch_deployment_configs:
+  master: 
+    namespace: master
+    kubeconfig:
+    k8s_deployment:
+  deploy-stage: 
+    namespace: vs-stage
+    kubeconfig: /home/chris/.kube/klaital/kubeconfig
+    k8s_deployment: run/stage.yaml
+  deploy-prod: 
+    namespace: vs-prod
+    kubeconfig: /home/chris/.kube/klaital/kubeconfig
+    k8s_deployment: run/prod.yaml
+

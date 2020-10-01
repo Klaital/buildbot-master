@@ -1,0 +1,17 @@
+branch_to_realm_mapping:
+        deploy-prod: prod
+        deploy-test: test
+
+services:
+        issue-tracker:
+                fail_on_tests: true
+                giturl: ssh://git@github.com/klaital/issue-tracker.git
+                run_tests: true
+        names-api:
+                fail_on_tests: true
+                giturl: ssh://git@github.com/klaital/names-api.git
+                run_tests: true
+        volunteer-savvy-backend:
+                fail_on_tests: true
+                giturl: ssh://git@github.com/klaital/volunteer-savvy-backend.git
+                run_tests: true
